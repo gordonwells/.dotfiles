@@ -1,4 +1,11 @@
 local dap = require('dap')
+
+dap.adapters.python = {
+    type = 'executable';
+    command = "/Users/gordonwells/.pyenv/versions/debugpy/bin/python";
+    args = { '-m', 'debugpy.adapter' };
+}
+
 dap.configurations.python = {
     {
         type = 'python';
@@ -6,7 +13,7 @@ dap.configurations.python = {
         name = 'Launch file';
         program = "${file}";
         pythonPath = function()
-            return '/usr/bin/python'
+            return 'python'
         end;
     },
 }
