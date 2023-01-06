@@ -28,9 +28,20 @@ lsp.on_attach(function(client, bufnr)
 
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 	vim.keymap.set("i", "<C-Space>", function() vim.lsp.buf.signature_help() end, opts)
 
 end)
+
+-- Configure LSP servers
+lsp.configure('pyright', {
+    settings = {
+        python = {
+            venvPath = "/Users/gordonwells/.pyenv/versions/",
+            analysis = {
+                diagnosticMode = "openFilesOnly"
+            },
+        }
+    }
+})
 
 lsp.setup()
