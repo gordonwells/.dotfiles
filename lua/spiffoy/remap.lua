@@ -1,15 +1,20 @@
+local remap = function(m, k, v) 
+    vim.keymap.set(m, k, v)
+end
+
+
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+remap("n", "<leader>e", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+remap("v", "J", ":m '>+1<CR>gv=gv")
+remap("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+remap("n", "J", "mzJ`z")
+remap("n", "<C-d>", "<C-d>zz")
+remap("n", "<C-u>", "<C-u>zz")
+remap("n", "n", "nzzzv")
+remap("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+remap("n", "<leader>y", "\"+y")
+remap("v", "<leader>y", "\"+y")
+remap("n", "<leader>Y", "\"+Y")
