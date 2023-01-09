@@ -7,12 +7,20 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Better status line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    -- Fuzzy finder
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Color theme
     use({
         'ellisonleao/gruvbox.nvim',
         as = 'gruvbox',
@@ -23,6 +31,7 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
+    -- LSP setup
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -45,5 +54,6 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- DAP setup
     use 'mfussenegger/nvim-dap'
 end)
