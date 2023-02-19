@@ -57,6 +57,9 @@ return require('packer').startup(function(use)
     -- DAP setup
     use 'mfussenegger/nvim-dap'
 
+    -- Better substitution
+    use 'tpope/vim-abolish'
+
     -- Improve netrw
     use 'tpope/vim-vinegar'
 end)
