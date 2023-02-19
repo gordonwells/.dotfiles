@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
 
             -- Snippets
             {'l3mon4d3/luasnip'},
-            {'rafamadriz/friendly-snippets'},
         }
     }
 
