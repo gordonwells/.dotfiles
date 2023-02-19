@@ -21,10 +21,11 @@ return require('packer').startup(function(use)
     }
 
     -- Color theme
-    use({
-        'ellisonleao/gruvbox.nvim',
-        as = 'gruvbox',
-    })
+    -- use({
+    --     'ellisonleao/gruvbox.nvim',
+    --     as = 'gruvbox',
+    -- })
+    use 'navarasu/onedark.nvim'
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('theprimeagen/harpoon')
