@@ -54,12 +54,32 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- DAP setup
     use 'mfussenegger/nvim-dap'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    -- Code diagnostics
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     -- Better substitution
     use 'tpope/vim-abolish'
 
     -- Improve netrw
     use 'tpope/vim-vinegar'
+
 end)
