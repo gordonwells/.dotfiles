@@ -89,4 +89,7 @@ return require('packer').startup(function(use)
     -- Improve netrw (because honestly it's garbage)
     use 'tpope/vim-vinegar'
 
+    -- Lanuage pack for better syntax and indent handling
+    use {'sheerun/vim-polyglot'}
+
 end)
