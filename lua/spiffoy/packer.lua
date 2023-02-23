@@ -28,8 +28,14 @@ return require('packer').startup(function(use)
     use 'navarasu/onedark.nvim'
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+    -- Hotkey those files
     use('theprimeagen/harpoon')
+
+    -- Where has this been all my life
     use('mbbill/undotree')
+
+    -- Git helper
     use('tpope/vim-fugitive')
 
     -- LSP setup
@@ -54,6 +60,7 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Need that DAP
     use 'mfussenegger/nvim-dap'
 
     use {
@@ -76,10 +83,10 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- Better substitution
+    -- Better substitution for upper and lower at the same time... and more!
     use 'tpope/vim-abolish'
 
-    -- Improve netrw
+    -- Improve netrw (because honestly it's garbage)
     use 'tpope/vim-vinegar'
 
 end)
