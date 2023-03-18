@@ -103,4 +103,10 @@ return require('packer').startup(function(use)
     -- Lanuage pack for better syntax and indent handling
     use {'sheerun/vim-polyglot'}
 
+    -- For enabling formatting
+    use {'jose-elias-alvarez/null-ls.nvim',
+        requires = {
+            "nvim-lua/plenary.nvim",
+    }}
+
 end)
