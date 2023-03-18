@@ -74,13 +74,6 @@ return require('packer').startup(function(use)
     use {
         "folke/trouble.nvim",
         requires = "nvim-tree/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
     }
 
     -- Better substitution for upper and lower at the same time... and more!
@@ -93,7 +86,7 @@ return require('packer').startup(function(use)
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
