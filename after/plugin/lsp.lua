@@ -41,7 +41,7 @@ lsp.configure('pyright', {
         }
     }
 })
-lsp.configure('sumneko_lua', {
+lsp.configure('lua', {
     settings = {
         Lua = {
             diagnostics = {
