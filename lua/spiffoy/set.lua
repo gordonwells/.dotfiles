@@ -1,31 +1,32 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local options = {
+    nu = true,
+    relativenumber = true,
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    smartindent = true,
+    splitbelow = true,
+    splitright = true,
+    wrap = false,
+    swapfile = false,
+    backup = false,
+    undodir = os.getenv("HOME") .. "/.vim/undodir",
+    undofile = true,
+    hlsearch = false,
+    incsearch = true,
+    termguicolors = true,
+    scrolloff = 8,
+    signcolumn = "yes",
+    updatetime = 50,
+    cursorline = true,
+    showmode = false
+}
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
 
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
--- vim.opt.colorcolumn = "90,99"
 
 vim.g.mapleader = " "
