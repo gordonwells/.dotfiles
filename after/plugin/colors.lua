@@ -8,7 +8,7 @@ require('onedark').setup  {
 
     -- toggle theme style ---
     toggle_style_key = "<leader>ts" ,
-    toggle_style_list = {'warm', 'light'}, -- List of styles to toggle between
+    toggle_style_list = {'light', 'warm'}, -- List of styles to toggle between
 
     -- Change code style ---
     -- Options are italic, bold, underline, none
