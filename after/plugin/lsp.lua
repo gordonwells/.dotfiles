@@ -1,33 +1,38 @@
 local lsp = require('lsp-zero')
-lsp.preset('recommended')
-
-lsp.ensure_installed({
-	'lua_ls',
-	'pyright',
+lsp.preset({
+    manage_nvim_cmp = {
+        set_sources = 'recommended'
+    }
 })
 
+lsp.ensure_installed({
+    'lua_ls',
+    'pyright',
+})
+
+
 local cmp = require('cmp')
-local cmp_select = {behaviour = cmp.SelectBehavior.Select}
+local cmp_select = { behaviour = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
 })
 
 lsp.set_preferences({
-	sign_icons = { }
+    sign_icons = {}
 })
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
+    mapping = cmp_mappings
 })
 
 lsp.on_attach(function(client, bufnr)
-	local opts = {buffer = bufnr, remap = false}
+    local opts = { buffer = bufnr, remap = false }
 
-	vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
-	vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-	vim.keymap.set('i', '<C-Space>', function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set('i', '<C-Space>', function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 -- Configure LSP servers
@@ -36,12 +41,13 @@ lsp.configure('pyright', {
         python = {
             venvPath = "/Users/gordonwells/.pyenv/versions/",
             analysis = {
-                diagnosticMode = "openFilesOnly"
+                diagnosticMode = "openFilesOnly",
+                autoImportCompletions = false,
             },
         }
     }
 })
-lsp.configure('lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
