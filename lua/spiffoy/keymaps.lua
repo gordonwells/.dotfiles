@@ -28,3 +28,9 @@ remap("n", "<Up>", "10<C-w>+")
 remap("n", "<Down>", "10<C-w>-")
 remap("n", "<Left>", "10<C-w><")
 remap("n", "<Right>", "10<C-w>>")
+
+-- Better window navigation
+remap("n", "<C-h>", "<C-w>h")
+remap("n", "<C-j>", "<C-w>j")
+remap("n", "<C-k>", "<C-w>k")
+remap("n", "<C-l>", "<C-w>l")
