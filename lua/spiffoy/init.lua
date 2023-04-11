@@ -1,3 +1,3 @@
 require("spiffoy.set")
-require("spiffoy.remap")
+require("spiffoy.keymaps")
 require("spiffoy.packer")
