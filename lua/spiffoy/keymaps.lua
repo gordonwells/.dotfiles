@@ -34,3 +34,10 @@ remap("n", "<C-h>", "<C-w>h")
 remap("n", "<C-j>", "<C-w>j")
 remap("n", "<C-k>", "<C-w>k")
 remap("n", "<C-l>", "<C-w>l")
+
+-- Keep indenting
+remap("v", "<", "<gv")
+remap("v", ">", ">gv")
+
+-- Keep pasting
+remap("v", "p", '"_dP')
