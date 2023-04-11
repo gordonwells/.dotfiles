@@ -79,19 +79,7 @@ return require('packer').startup(function(use)
     -- Better substitution for upper and lower at the same time... and more!
     use 'tpope/vim-abolish'
 
-    -- Improve netrw (because honestly it's garbage)
-    use 'tpope/vim-vinegar'
-
-    -- File tree (seriously why is netrw the default)
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        }
-    }
+    use 'nvim-tree/nvim-tree.lua'
 
     -- Lanuage pack for better syntax and indent handling
     use {'sheerun/vim-polyglot'}
