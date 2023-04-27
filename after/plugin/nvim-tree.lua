@@ -13,7 +13,7 @@ require("nvim-tree").setup({
 })
 
 local api = require("nvim-tree.api")
-vim.keymap.set("n", "<leader>tt", function()
+vim.keymap.set("n", "<leader>t", function()
   api.tree.toggle({
     find_file = true,
     focus = true
