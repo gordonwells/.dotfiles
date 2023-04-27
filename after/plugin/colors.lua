@@ -7,7 +7,7 @@ require('onedark').setup  {
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
-    toggle_style_key = "<leader>ts" ,
+    toggle_style_key = "<leader>cs" ,
     toggle_style_list = {'light', 'warm'}, -- List of styles to toggle between
 
     -- Change code style ---
@@ -23,7 +23,7 @@ require('onedark').setup  {
 
     -- Lualine options --
     lualine = {
-        transparent = true, -- lualine center bar transparency
+        transparent = false, -- lualine center bar transparency
     },
 
     -- Custom Highlights --
