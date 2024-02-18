@@ -1,8 +1,19 @@
+-- Required to avoid interference with nvimtree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("spiffoy.set")
-require("spiffoy.keymaps")
-require("spiffoy.plugins")
+require("user.keymaps")
+require("user.plugins")
 
-vim.api.nvim_set_var('python3_host_prog', '/Users/gordonwells/.pyenv/versions/pynvim/bin/python')
+require("user.cmp")
+require("user.colorscheme")
+require("user.dap")
+require("user.gitsigns")
+require("user.harpoon")
+require("user.lsp")
+require("user.lualine")
+require("user.nvim-tree")
+require("user.options")
+require("user.treesitter")
+
+vim.g.python3_host_prog = "/home/gordon/.pyenv/versions/py3nvim/bin/python"
