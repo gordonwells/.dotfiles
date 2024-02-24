@@ -2,7 +2,6 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
 	return
 end
-print("sadfsa")
 
 configs.setup({
 	ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
