@@ -16,4 +16,4 @@ require("user.nvim-tree")
 require("user.options")
 require("user.treesitter")
 
-vim.g.python3_host_prog = "/home/gordon/.pyenv/versions/py3nvim/bin/python"
+vim.g.python3_host_prog = "$HOME/.pyenv/versions/py3nvim/bin/python"
