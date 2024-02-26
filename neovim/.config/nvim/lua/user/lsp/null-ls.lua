@@ -16,5 +16,6 @@ null_ls.setup({
 		formatting.isort,
 		formatting.stylua,
 		diagnostics.flake8.with({ extra_args = { "--max-line-length", "99" } }),
+		formatting.shfmt,
 	},
 })
