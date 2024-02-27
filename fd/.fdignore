@@ -1,0 +1,11 @@
+*
+
+!repos/
+!repos/*
+!repos/*/**
+
+!.config/
+!.config/nvim/
+
+__pycache__
+.terraform
