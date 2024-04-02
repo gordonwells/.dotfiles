@@ -4,6 +4,6 @@ if not status_ok then
 	return
 end
 
-dap_python.setup("/home/gordon/.pyenv/versions/3.11.6/envs/debugpy/bin/python")
+dap_python.setup(os.getenv("HOME") .. "/.pyenv/versions/debugpy/bin/python")
 
 dap_python.test_runner = "pytest"
