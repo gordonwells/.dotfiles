@@ -62,7 +62,7 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Telescope
-keymap("n", "<leader>sf", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files({ hidden = true, no_ignore = true})<cr>", opts)
 keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
 
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
