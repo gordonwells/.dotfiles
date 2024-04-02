@@ -21,6 +21,7 @@ nvim_tree.setup({
 	sort_by = "case_sensitive",
 	view = {
 		width = 30,
+		adaptive_size = true,
 	},
 	filters = {
 		dotfiles = false,
