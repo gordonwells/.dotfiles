@@ -83,7 +83,7 @@ require("gitsigns").setup({
 		map("n", "<leader>gR", gs.reset_buffer)
 		map("n", "<leader>gp", gs.preview_hunk)
 		map("n", "<leader>gb", function()
-			gs.blame_line({ full = true })
+			gs.blame_line({ full = false })
 		end)
 		map("n", "<leader>gt", gs.toggle_current_line_blame)
 		map("n", "<leader>gd", gs.diffthis)
