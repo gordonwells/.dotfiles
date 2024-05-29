@@ -64,6 +64,8 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- Telescope
 keymap("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files({ hidden = true, no_ignore = true})<cr>", opts)
 keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
+keymap('n', '<leader>sb', "<cmd>Telescope buffers<cr>", opts)
+keymap('n', '<leader>sh', "<cmd>Telescope help_tags<cr>", opts)
 
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 
