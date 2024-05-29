@@ -3,8 +3,8 @@ return {
 		python = {
 			analysis = {
 				typeCheckingMode = "off",
-				venvPath = os.getenv("HOME") .. "/.pyenv/versions",
 			},
+			venvPath = os.getenv("HOME") .. "/.pyenv/versions/",
 		},
 	},
 }
