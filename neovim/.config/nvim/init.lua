@@ -15,5 +15,6 @@ require("user.lualine")
 require("user.nvim-tree")
 require("user.options")
 require("user.treesitter")
+require("user.indent-blankline")
 
 vim.g.python3_host_prog = "$HOME/.pyenv/versions/py3nvim/bin/python"
