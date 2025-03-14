@@ -34,6 +34,11 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+
+-- Larger scroll
+keymap("n", "<C-y>", "2<C-y>", opts)
+keymap("n", "<C-e>", "2<C-e>", opts)
+
 -- Yank to system clipboard
 keymap("n", "<leader>y", '"+y', opts)
 
@@ -66,8 +71,12 @@ keymap("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files({ hi
 keymap("n", "<leader>sg", "<cmd>Telescope live_grep<cr>", opts)
 keymap('n', '<leader>sb', "<cmd>Telescope buffers<cr>", opts)
 keymap('n', '<leader>sh', "<cmd>Telescope help_tags<cr>", opts)
+keymap('n', '<leader>sm', "<cmd>Telescope marks<cr>", opts)
 
 keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
+
+-- Undotree
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
 -- nvim-tree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
@@ -79,3 +88,8 @@ keymap("n", "<S-F5>", "<cmd>DapTerminate<cr>", opts)
 keymap("n", "<F10>", "<cmd>DapStepOver<cr>", opts)
 keymap("n", "<F11>", "<cmd>DapStepInto<cr>", opts)
 keymap("n", "<S-F11>", "<cmd>DapStepOut<cr>", opts)
+
+-- nvim-treesitter-context
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context(vim.v.count1)
+end, { silent = true })

@@ -51,6 +51,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
@@ -104,6 +105,13 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 	use({ "mfussenegger/nvim-dap-python", requires = { "mfussenegger/nvim-dap" } })
 
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	})
+
 	use({
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
@@ -124,7 +132,7 @@ return packer.startup(function(use)
 	-- Lanuage pack for better syntax and indent handling
 	use({ "sheerun/vim-polyglot" })
 
-	use({ "lukas-reineke/indent-blankline.nvim" })
+	-- use({ "nvim-treesitter/nvim-treesitter-context" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

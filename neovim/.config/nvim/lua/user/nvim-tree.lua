@@ -36,7 +36,7 @@ nvim_tree.setup({
 	},
 	on_attach = my_on_attach,
 	renderer = {
-		group_empty = true,
+		group_empty = false,
 		icons = {
 			web_devicons = {
 				file = {

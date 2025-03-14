@@ -11,7 +11,9 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier.with({
+			extra_args = { "--single-quote", "--jsx-single-quote", "--quote-props", "consistent" },
+		}),
 		formatting.black.with({ extra_args = { "-l", "99" } }),
 		formatting.isort.with({ extra_args = { "--multi-line", "3" } }),
 		formatting.stylua,
@@ -19,5 +21,14 @@ null_ls.setup({
 		formatting.shfmt,
 		formatting.stylua,
 		formatting.terraform_fmt,
+		formatting.sql_formatter.with({
+			extra_args = {
+				"--config",
+				[[{
+				"language": "tsql",
+				"dialect": "tsql"
+}]],
+			},
+		}),
 	},
 })

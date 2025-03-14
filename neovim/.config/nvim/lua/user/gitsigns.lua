@@ -22,6 +22,7 @@ require("gitsigns").setup({
 		delay = 1000,
 		ignore_whitespace = false,
 		virt_text_priority = 100,
+		extra_opts = { "-MC" },
 	},
 	current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
 	sign_priority = 6,
@@ -36,11 +37,8 @@ require("gitsigns").setup({
 		row = 0,
 		col = 1,
 	},
-	yadm = {
-		enable = false,
-	},
 	on_attach = function(bufnr)
-		local gs = package.loaded.gitsigns
+		local gs = require("gitsigns")
 
 		local function map(mode, l, r, opts)
 			opts = opts or {}
@@ -83,8 +81,9 @@ require("gitsigns").setup({
 		map("n", "<leader>gR", gs.reset_buffer)
 		map("n", "<leader>gp", gs.preview_hunk)
 		map("n", "<leader>gb", function()
-			gs.blame_line({ full = false })
+			gs.blame_line({ full = false, extra_opts = { "-CM" } })
 		end)
+		map("n", "<leader>gB", gs.blame)
 		map("n", "<leader>gt", gs.toggle_current_line_blame)
 		map("n", "<leader>gd", gs.diffthis)
 		map("n", "<leader>gD", function()
